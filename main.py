@@ -1,5 +1,6 @@
 from menu import *
 from file_handling import *
+import database
 
 def main():
     running = True
@@ -11,6 +12,11 @@ def main():
             print("Welcome to Add Product")
             print()
             add_product()
+            
+        elif choice == 2:
+            print("welcome to View Expenes")
+            print()
+            view_products()
 
         elif choice == 13:
           save_files() 
@@ -20,4 +26,5 @@ def main():
             print("Good Luck!")
 
 if __name__ == "__main__":
+    database.products.extend(load_files())
     main()
