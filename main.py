@@ -12,12 +12,22 @@ def main():
             print("Welcome to Add Product")
             print()
             add_product()
-            
+
         elif choice == 2:
-            print("welcome to View Expenes")
+            print("welcome to View Products")
             print()
             view_products()
 
+        elif choice == 3:
+            print("Welcome to Search Product")
+            print()
+            search_products()
+
+        elif choice == 4:
+            print("welcome to Update Products")
+            print()
+            update_product()
+            
         elif choice == 13:
           save_files() 
           print("data Saved Successfully!✅")

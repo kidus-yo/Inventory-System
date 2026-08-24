@@ -54,12 +54,40 @@ def view_products():
      print("-" * 30)
 
 def search_products():
-    enter_ID = int(input("Please Enter the product_ID: "))
-    for product in products:
-        if enter_ID == product.product_id:
-                 print("-" * 30)
-                 print(f"Name: {product.name}")
-                 print(f"Price: {product.price}")
-                 print(f"quantity: {product.quantity}")
-                 print(f"Catagory: {product.catagory}")
-                 print(f"The product Id is: {product.product_id}")
+   while True:
+    try:
+        enter_ID = int(input("Please Enter the product_ID: "))
+        for product in products:
+            if enter_ID == product.product_id:
+                    print("-" * 30)
+                    print(f"Name: {product.name}")
+                    print(f"Price: {product.price}")
+                    print(f"quantity: {product.quantity}")
+                    print(f"Catagory: {product.catagory}")
+                    print(f"The product Id is: {product.product_id}")
+                    break
+    except ValueError:
+        print("Please Enter only the required inputs!")
+    except Exception:
+        print("Something Went Wrong!")
+
+def update_product():
+    try:
+        update_ID = int(input("Please Enter your product ID: "))
+        for product in products:
+         if update_ID == product.product_id:
+            name1 = input("Please Enter the name of the product: ")
+            price1 = int(input("Enter the Price of the product: "))
+            quantity1 = int(input("Enter quantity: "))
+            catagory1 = input("Enter Catagory: ")
+
+            for update in products:
+                update.name = name1
+                update.price = price1
+                update.quantity1 = quantity1
+                update.catagory = catagory1
+
+            print("Product Information Updated Successfully!✅")
+    except ValueError:
+        print("Please Enter only the required inputs")
+   
