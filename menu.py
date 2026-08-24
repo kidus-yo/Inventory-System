@@ -36,7 +36,8 @@ def add_product():
      catagory = input("Enter Cantagory: ")
 
      product = Product(name, price, quantity, catagory)
-     product.append(products)
+     products.append(product)
+     print("Product Added Successully✅")
 
 def view_products():
     pass

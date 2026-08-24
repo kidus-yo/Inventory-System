@@ -12,9 +12,12 @@ def main():
             print()
             add_product()
 
-        elif choice == 11:
+        elif choice == 13:
           save_files() 
           print("data Saved Successfully!✅")
-        elif choice == 12:
+        elif choice == 14:
             running = False
             print("Good Luck!")
+
+if __name__ == "__main__":
+    main()
