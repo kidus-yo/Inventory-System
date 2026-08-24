@@ -1,3 +1,6 @@
+from models.product import * 
+from database import *
+
 
 def main_menu():
     print("Welcome to Invenstory Managment System💭")
@@ -26,5 +29,14 @@ def main_menu():
     except Exception:
         print("Soemthing Went Wrong")
 
-def Add_product():
+def add_product():
+     name = input("Enter name of the Product: ")
+     price = int(input("Enter the price of the product: "))
+     quantity =  int(input("Enter quantity: "))
+     catagory = input("Enter Cantagory: ")
+
+     product = Product(name, price, quantity, catagory)
+     product.append(products)
+
+def view_products():
     pass

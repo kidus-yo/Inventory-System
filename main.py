@@ -1,4 +1,5 @@
 from menu import *
+from file_handling import *
 
 def main():
     running = True
@@ -7,4 +8,13 @@ def main():
         choice = main_menu()
 
         if choice == 1:
-            pass
+            print("Welcome to Add Product")
+            print()
+            add_product()
+
+        elif choice == 11:
+          save_files() 
+          print("data Saved Successfully!✅")
+        elif choice == 12:
+            running = False
+            print("Good Luck!")
