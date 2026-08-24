@@ -12,6 +12,7 @@ def save_files():
                 "price": product.price,
                 "catagory": product.catagory,
                 "quantity": product.product_quantity,
+                "product_id": product.product_id
             })
 
 
@@ -31,14 +32,15 @@ def load_files():
                       data["name"],
                       data["price"],
                       data["quantity"],
-                      data["catagory"]
+                      data["catagory"],
+                      
                 )
 
                 product.product_id = data["product_id"]
                 loaded_files.append(product) 
 
           if content:
-                highest_id = max( key["product_id"] for key in content)
+                highest_id = max( found["product_id"] for found in content)
                 Product.product_id = highest_id + 1
 
           return loaded_files

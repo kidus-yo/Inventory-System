@@ -48,7 +48,7 @@ def view_products():
      print("-" * 30)
      print(f"Name: {product.name}")
      print(f"Price: {product.price}")
-     print(f"quantity: {product.quantity}")
+     print(f"quantity: {product.product_quantity}")
      print(f"Catagory: {product.catagory}")
      print(f"The product Id is: {product.product_id}")
      print("-" * 30)
