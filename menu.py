@@ -72,6 +72,7 @@ def search_products():
         print("Something Went Wrong!")
 
 def update_product():
+
     try:
         update_ID = int(input("Please Enter your product ID: "))
         for product in products:
@@ -90,4 +91,10 @@ def update_product():
             print("Product Information Updated Successfully!✅")
     except ValueError:
         print("Please Enter only the required inputs")
-   
+
+
+def delete_product():
+    delete_ID = int(input("Enter an ID: "))
+    for product in products:
+     if delete_ID == product.product_id:
+        products.remove(product)
