@@ -27,8 +27,16 @@ def main():
             print("welcome to Update Products")
             print()
             update_product()
+
         elif choice == 5:
-            print("WE")
+            print("Welcome to Delete Products")
+            print()
+            delete_product()
+
+        elif choice == 6:
+            print("Welcome to Sale Products")
+            print()
+            sale_products()
         elif choice == 13:
           save_files() 
           print("data Saved Successfully!✅")

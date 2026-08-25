@@ -1,5 +1,7 @@
 from models.product import * 
+from models.sales import *
 from database import *
+from datetime import datetime
 
 
 def main_menu():
@@ -98,3 +100,13 @@ def delete_product():
     for product in products:
      if delete_ID == product.product_id:
         products.remove(product)
+    print("Product Deleted Succesfully!✅")
+
+def sale_products():
+    product_name = input("Enter the name of the product: ")
+    quantity = int(input("Enter quantity: "))
+    sale_date = input("Enter Date: ")
+    data = datetime.strptime(sale_date, "%Y-%m-%d")
+
+    sale = Sale(product_name, quantity, data)
+    sales.append(sale)
