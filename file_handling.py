@@ -13,7 +13,7 @@ def save_files():
         }
         
         for product in products:
-            data.append["products"]({
+            data["products"].append({
                 "name": product.name,
                 "price": product.price,
                 "catagory": product.catagory,
@@ -22,8 +22,8 @@ def save_files():
             })
 
             for sale in sales:
-                 data.append["sales"]({
-                  "name": sale.proaduct_name,
+                 data["sales"].append({
+                  "name": sale.product.name,
                    "quantity": sale.quantity,
                    "date": sale.date,
                    "sale_id": sale.sale_id,   
@@ -81,7 +81,9 @@ def load_sale():
 
 
             if content:
-                  highest_id = max(number["sale_id"] for number in content["sales"])
-                  Sale.sale_id = highest_id + 1
+                 highest_id = max(
+                  number["sale_id"] for number in content["sales"])
 
-            return loaded_sales
+                 Sale.sale_id = highest_id + 1
+
+      return load_sale

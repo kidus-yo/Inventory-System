@@ -45,6 +45,6 @@ def main():
             print("Good Luck!")
 
 if __name__ == "__main__":
-    database.products.extend(load_files())
-    database.sales.extend(load_sale())
+    #database.products.extend(load_files())
+    #database.sales.extend(load_sale())
     main()

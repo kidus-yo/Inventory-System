@@ -1,3 +1,5 @@
+from models.sales import *
+
 class Product:
 
     product_id = 1100
