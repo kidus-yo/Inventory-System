@@ -7,10 +7,13 @@ from datetime import datetime
 def save_files():
         file_path = "C:/Users/victus/OneDrive/Desktop/product.json"
 
-        data = []
-        saless = []
+        data = {
+              "products": [],
+              "sales": [],
+        }
+        
         for product in products:
-            data.append({
+            data.append["products"]({
                 "name": product.name,
                 "price": product.price,
                 "catagory": product.catagory,
@@ -19,10 +22,10 @@ def save_files():
             })
 
             for sale in sales:
-                 saless.append({
+                 data.append["sales"]({
                   "name": sale.proaduct_name,
                    "quantity": sale.quantity,
-                   "date": sale.data,
+                   "date": sale.date,
                    "sale_id": sale.sale_id,   
                  })
 
@@ -38,7 +41,7 @@ def load_files():
     with open(file_path, 'r') as file:
           content = json.load(file)
 
-          for data in content:
+          for data in content["products"]:
                 product = Product(
                       data["name"],
                       data["price"],
@@ -53,7 +56,7 @@ def load_files():
                 loaded_files.append(product) 
 
           if content:
-                highest_id = max( found["product_id"] for found in content)
+                highest_id = max( found["product_id"] for found in content["products"])
                 Product.product_id = highest_id + 1
 
           return loaded_files
@@ -65,13 +68,12 @@ def load_sale():
       with open(file_path, 'r') as file:
             content = json.load(file)
 
-            for data in content:
+            for data in content["sales"]:
                   sales = Sale(
 
                    data["name"],
                    data["quantity"],
-                   data["data"],
-                   datetime.strptime(data["data"], "%Y-%m-%d")
+                   datetime.strptime(data["date"], "%Y-%m-%d")
                   )
 
                   sales.sale_id = data["sale_id"]
@@ -79,7 +81,7 @@ def load_sale():
 
 
             if content:
-                  highest_id = max(number["sale_id"] for number in content)
+                  highest_id = max(number["sale_id"] for number in content["sales"])
                   Sale.sale_id = highest_id + 1
 
             return loaded_sales
