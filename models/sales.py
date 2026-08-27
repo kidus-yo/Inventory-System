@@ -8,5 +8,5 @@ class Sale:
     def __init__(self, product, quantity, sale_date):
         self.product = product
         self.quantity = quantity
-        self.date = sale_date
+        self.sale_date = sale_date
         Sale.total += 1

@@ -110,3 +110,5 @@ def sale_products():
 
     sale = Sale(product_name, quantity, data)
     sales.append(sale)
+
+

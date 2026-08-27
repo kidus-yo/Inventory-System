@@ -2,6 +2,7 @@ import json
 from database import *
 from models.product import *
 from models.sales import *
+from datetime import datetime
 
 def save_files():
         file_path = "C:/Users/victus/OneDrive/Desktop/product.json"
@@ -69,7 +70,8 @@ def load_sale():
 
                    data["name"],
                    data["quantity"],
-                   data["date"],
+                   data["data"],
+                   datetime.strptime(data["data"], "%Y-%m-%d")
                   )
 
                   sales.sale_id = data["sale_id"]
