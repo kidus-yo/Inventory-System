@@ -2,6 +2,7 @@ import json
 from database import *
 from models.product import *
 from models.sales import *
+from menu import *
 from datetime import datetime
 
 def save_files():
@@ -20,9 +21,11 @@ def save_files():
                 "quantity": product.product_quantity,
                 "product_id": product.product_id
             })
-
+            for sale in sales:
+              print(type(sale.product))
             for sale in sales:
                  data["sales"].append({
+                       
                   "name": sale.product.name,
                    "quantity": sale.quantity,
                    "date": sale.date.strftime("%Y-%m-%d"),
@@ -32,7 +35,7 @@ def save_files():
 
         with open(file_path, 'w') as file:
                 json.dump(data, file, indent=4)
-
+        return data
 def load_files():
     file_path = "C:/Users/victus/OneDrive/Desktop/product.json"
 
@@ -87,3 +90,5 @@ def load_sale():
                  Sale.sale_id = highest_id + 1
 
       return loaded_sales
+
+
