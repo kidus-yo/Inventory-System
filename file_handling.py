@@ -25,7 +25,7 @@ def save_files():
                  data["sales"].append({
                   "name": sale.product.name,
                    "quantity": sale.quantity,
-                   "date": sale.date,
+                   "date": sale.date.strftime("%Y-%m-%d"),
                    "sale_id": sale.sale_id,   
                  })
 
@@ -80,10 +80,10 @@ def load_sale():
                   loaded_sales.append(sales)
 
 
-            if content:
+            if content["sales"]:
                  highest_id = max(
                   number["sale_id"] for number in content["sales"])
 
                  Sale.sale_id = highest_id + 1
 
-      return load_sale
+      return loaded_sales

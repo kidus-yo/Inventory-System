@@ -103,12 +103,16 @@ def delete_product():
     print("Product Deleted Succesfully!✅")
 
 def sale_products():
-    product_name = input("Enter the name of the product: ")
+    products_id = int(input("Enter Product ID: "))
     quantity = int(input("Enter quantity: "))
     sale_date = input("Enter Date: ")
     date = datetime.strptime(sale_date, "%Y-%m-%d")
 
-    sale = Sale(product_name, quantity, date)
-    sales.append(sale)
+    for product in products:
+        if products_id == product.product_id:
+            sale = Sale(product, quantity, date)
+            sales.append(sale)
+
+
 
 
