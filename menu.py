@@ -116,7 +116,9 @@ def sale_products():
 
 def view_sales():
     for sale in sales:
-            print("DEBUG:", sale.product, type(sale.product))
+            print("-" * 30)
             print(f"Product Name: {sale.product.name}")
             print(f"Quantity: {sale.quantity}")
             print(f"Date: {sale.date}")
+            print("-" * 30)
+

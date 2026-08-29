@@ -21,12 +21,11 @@ def save_files():
                 "quantity": product.product_quantity,
                 "product_id": product.product_id
             })
-            for sale in sales:
-              print(type(sale.product))
-            for sale in sales:
+           
+        for sale in sales:
                  data["sales"].append({
                        
-                  "name": sale.product.name,
+                  "product_id": sale.product.product_id,
                    "quantity": sale.quantity,
                    "date": sale.date.strftime("%Y-%m-%d"),
                    "sale_id": sale.sale_id,   
@@ -72,9 +71,11 @@ def load_sale():
             content = json.load(file)
 
             for data in content["sales"]:
-                  sales = Sale(
-
-                   data["name"],
+               for product in products:
+                  if product.product_id == data["product_id"]:
+                   sales = Sale(
+                     
+                   product,
                    data["quantity"],
                    datetime.strptime(data["date"], "%Y-%m-%d")
                   )
