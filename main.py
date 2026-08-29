@@ -42,7 +42,12 @@ def main():
             print("Welcome to View Sales")
             print()
             view_sales()
-            
+
+        elif choice == 8:
+            print("Welcome to Sales Report📊")
+            print()
+            sales_report()
+                
         elif choice == 13:
           save_files() 
           print("data Saved Successfully!✅")

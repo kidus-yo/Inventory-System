@@ -122,3 +122,14 @@ def view_sales():
             print(f"Date: {sale.date}")
             print("-" * 30)
 
+def sales_report():
+   print("=" * 30)
+   print()
+   print("Sales Report")
+   print()
+   print("=" * 30)
+
+  
+   print(f"Total Transactions: {Sale.total}")
+   print(f"Total Products Sold: {Sale.product_quantity}")
+
