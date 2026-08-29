@@ -47,7 +47,12 @@ def main():
             print("Welcome to Sales Report📊")
             print()
             sales_report()
-                
+
+        elif choice == 9:
+            print("Welcome to Restock Product")
+            print()
+            restock_product()
+            
         elif choice == 13:
           save_files() 
           print("data Saved Successfully!✅")

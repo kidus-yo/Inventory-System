@@ -110,10 +110,15 @@ def sale_products():
 
     for product in products:
         if products_id == product.product_id:
+            if quantity > product.product_quantity:
+                print("Not enough stock available")
+            else:
+              product.product_quantity -= quantity
             sale = Sale(product, quantity, date)
             sales.append(sale)
+             
     print("Product Sold Successfully✅")
-
+    
 def view_sales():
     for sale in sales:
             print("-" * 30)
@@ -133,3 +138,23 @@ def sales_report():
    print(f"Total Transactions: {Sale.total}")
    print(f"Total Products Sold: {Sale.product_quantity}")
 
+def restock_product():
+    print("=" * 30)
+    print()
+    print("RESTOCK")
+    print()
+    print("=" * 30)
+
+    enter_ID = int(input("Enter product ID: "))
+    for product in products:
+        if product.product_id == enter_ID:
+            print(f"Current Sock: {product.product_quantity}")
+
+            restock = int(input("Enter restock quantity: "))
+            if restock <= 0:
+                print("Enter a valid input")
+            else:
+                product.product_quantity += restock
+
+
+    
