@@ -156,5 +156,22 @@ def restock_product():
             else:
                 product.product_quantity += restock
 
+def adjust_stock():
+    print("=" * 30)
+    print()
+    print("ADJUST")
+    print()
+    print("=" * 30)
 
-    
+    enter_ID = int(input("Enter product ID: "))
+
+    for product in products:
+      if enter_ID == product.product_ID:
+          print(f"Current Stock: {product.product_quantity}")
+          adjust = int(input("Adjust Stock: "))
+          if adjust <= 0:
+              print("Enter only the required input")
+          else:
+           product.product_quantity = adjust
+           print("Stock Adjusted Successfully✅")
+

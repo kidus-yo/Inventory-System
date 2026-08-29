@@ -52,7 +52,12 @@ def main():
             print("Welcome to Restock Product")
             print()
             restock_product()
-            
+
+        elif choice == 10:
+            print("Welcome to Adjust Stock🧑‍🔧")
+            print()
+            adjust_stock()
+
         elif choice == 13:
           save_files() 
           print("data Saved Successfully!✅")
