@@ -175,3 +175,37 @@ def adjust_stock():
            product.product_quantity = adjust
            print("Stock Adjusted Successfully✅")
 
+def low_stock():
+    print("=" * 30)
+    print()
+    print("LOW STOCK")
+    print()
+    print("=" * 30)
+
+    for product in products:
+        if product.product_quantity <= 3:
+            print("-" * 30)
+            print("LOW STOCK🚨")
+            print("-" * 30)
+            print(f"Product ID: {product.product_id}")
+            print(f"Product Name: {product.name}")
+            print(f"Availabe Stocks: {product.product_quantity}")
+
+        elif product.product_quantity > 3 and product.product_quantity <=7:
+            print("-" * 30)
+            print("Medium STOCK🧘")
+            print("-" * 30)
+            print(f"Product ID: {product.product_id}")
+            print(f"Product Name: {product.name}")
+            print(f"Availabe Stocks: {product.product_quantity}")
+
+        elif product.product_quantity > 7:
+            print("-" * 30)
+            print("SAFE STOCK QUANTITY!✅")
+            print("-" * 30)
+            print(f"Product ID: {product.product_id}")
+            print(f"Product Name: {product.name}")
+            print(f"Availabe Stocks: {product.product_quantity}")
+        else:
+            print("Something Went Wrong!")
+

@@ -58,6 +58,11 @@ def main():
             print()
             adjust_stock()
 
+        elif choice == 11:
+            print("Welcome to Low Stock Report🔈")
+            print()
+            low_stock()
+
         elif choice == 13:
           save_files() 
           print("data Saved Successfully!✅")
