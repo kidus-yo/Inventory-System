@@ -112,7 +112,11 @@ def sale_products():
         if products_id == product.product_id:
             sale = Sale(product, quantity, date)
             sales.append(sale)
+    print("Product Sold Successfully✅")
 
-
-
-
+def view_sales():
+    for sale in sales:
+            print("DEBUG:", sale.product, type(sale.product))
+            print(f"Product Name: {sale.product.name}")
+            print(f"Quantity: {sale.quantity}")
+            print(f"Date: {sale.date}")

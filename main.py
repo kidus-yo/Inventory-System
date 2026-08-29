@@ -37,6 +37,12 @@ def main():
             print("Welcome to Sale Products")
             print()
             sale_products()
+
+        elif choice == 7:
+            print("Welcome to View Sales")
+            print()
+            view_sales()
+            
         elif choice == 13:
           save_files() 
           print("data Saved Successfully!✅")
